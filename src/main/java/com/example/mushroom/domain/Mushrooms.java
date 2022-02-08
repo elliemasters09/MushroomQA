@@ -20,4 +20,28 @@ public class Mushrooms {
 		
 	private String isEdible;
 
+	public Mushrooms() {
+		
+	}
+
+	public Mushrooms(Long id, String name, String latin, int deadliness, String isEdible) {
+		this.id = id;
+		this.name = name;
+		this.latin = latin;
+		this.deadliness = deadliness;
+		this.isEdible = isEdible;
+	}
+
+	public Mushrooms(String name, String latin, int deadliness, String isEdible) {
+		this.name = name;
+		this.latin = latin;
+		this.deadliness = deadliness;
+		this.isEdible = isEdible;
+	}
+	
+	
+	
+	
+
 }
+
