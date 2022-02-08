@@ -38,6 +38,46 @@ public class Mushrooms {
 		this.deadliness = deadliness;
 		this.isEdible = isEdible;
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLatin() {
+		return latin;
+	}
+
+	public void setLatin(String latin) {
+		this.latin = latin;
+	}
+
+	public int getDeadliness() {
+		return deadliness;
+	}
+
+	public void setDeadliness(int deadliness) {
+		this.deadliness = deadliness;
+	}
+
+	public String getIsEdible() {
+		return isEdible;
+	}
+
+	public void setIsEdible(String isEdible) {
+		this.isEdible = isEdible;
+	}
 	
 	
 	
