@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,5 +40,14 @@ private List<Mushrooms> mushroom = new ArrayList<>();
 			return this.mushroom.get(id);
 			
 }
+		//Update - PUT
+		//create, read by id
+		@PutMapping("/updateMushroom/{id}")
+		public Mushrooms updateMushroom(@PathVariable int id, @RequestBody Mushrooms mh) {
+		//remove mushroom by id
+		
+			this.mushroom.set(id, mh);
+			return this.mushroom.get(id);
+		}
 		
 }
