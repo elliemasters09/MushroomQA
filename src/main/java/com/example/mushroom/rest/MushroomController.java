@@ -41,6 +41,12 @@ private List<Mushrooms> mushroom = new ArrayList<>();
 			return this.mushroom.get(id);
 			
 }
+		
+		@GetMapping("/getAll")
+		public List<Mushrooms> getAll(){
+			return this.mushroom;
+					
+		}
 		//Update - PUT
 		//create, read by id
 		@PutMapping("/updateMushroom/{id}")
