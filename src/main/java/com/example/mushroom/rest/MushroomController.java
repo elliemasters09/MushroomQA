@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,6 +49,12 @@ private List<Mushrooms> mushroom = new ArrayList<>();
 		
 			this.mushroom.set(id, mh);
 			return this.mushroom.get(id);
+		}
+		
+		//Delete - DELETE
+		@DeleteMapping("/removeMushroom/{id}")
+		public Mushrooms removeMushroom(@PathVariable int id) {
+			return this.mushroom.remove(id);
 		}
 		
 }
