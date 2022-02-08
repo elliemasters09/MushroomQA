@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,4 +32,12 @@ private List<Mushrooms> mushroom = new ArrayList<>();
 		Mushrooms newMushroom = this.mushroom.get(this.mushroom.size()-1);
 		return new ResponseEntity<Mushrooms>(newMushroom, HttpStatus.CREATED);
 	}
+	
+	//Read by ID (GET)
+		@GetMapping("/getOne/{id}")
+		public Mushrooms getOne(@PathVariable int id){
+			return this.mushroom.get(id);
+			
+}
+		
 }
