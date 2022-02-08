@@ -1,5 +1,7 @@
 package com.example.mushroom.domain;
 
+import java.util.Objects;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -77,6 +79,31 @@ public class Mushrooms {
 
 	public void setIsEdible(String isEdible) {
 		this.isEdible = isEdible;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(deadliness, id, isEdible, latin, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Mushrooms other = (Mushrooms) obj;
+		return deadliness == other.deadliness && Objects.equals(id, other.id)
+				&& Objects.equals(isEdible, other.isEdible) && Objects.equals(latin, other.latin)
+				&& Objects.equals(name, other.name);
+	}
+
+	@Override
+	public String toString() {
+		return "Mushrooms [id=" + id + ", name=" + name + ", latin=" + latin + ", deadliness=" + deadliness
+				+ ", isEdible=" + isEdible + "]";
 	}
 	
 	
